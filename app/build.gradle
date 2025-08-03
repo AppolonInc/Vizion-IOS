@@ -1,0 +1,151 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.plugin.serialization'
+    id 'com.google.devtools.ksp'
+    id 'com.google.dagger.hilt.android'
+}
+
+android {
+    compileSdk 34
+    namespace 'com.vizion.security'
+
+    defaultConfig {
+        applicationId "com.vizion.security"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        
+        // Build config fields
+        buildConfigField "String", "WAZUH_SERVER", "\"159.65.120.14\""
+        buildConfigField "String", "WAZUH_PORT", "\"1514\""
+        buildConfigField "String", "API_BASE_URL", "\"https://appollon-inc.com/api\""
+    }
+
+    buildFeatures {
+        buildConfig = true
+        compose = true
+    }
+    
+    composeOptions {
+        kotlinCompilerExtensionVersion = '1.5.5'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+        }
+    }
+    
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+        freeCompilerArgs += [
+                "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
+                "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi",
+                "-opt-in=androidx.compose.ui.ExperimentalComposeUiApi",
+                "-opt-in=kotlin.RequiresOptIn"
+        ]
+    }
+    
+    packaging {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+    
+    lint {
+        abortOnError = false
+        checkReleaseBuilds = false
+        disable 'ProtectedPermissions'
+    }
+}
+
+dependencies {
+    // Android Core - versions stables compatibles
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.activity:activity-compose:1.7.2'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2'
+
+    // Compose BOM - version stable
+    implementation platform('androidx.compose:compose-bom:2023.08.00')
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.ui:ui-graphics'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    implementation 'androidx.compose.material3:material3'
+    implementation 'androidx.compose.material:material-icons-extended'
+
+    // Gson for JSON parsing
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    // HTTP client pour API Wazuh
+    implementation "com.squareup.okhttp3:okhttp:4.11.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.11.0"
+
+    // JSON parsing
+    implementation "org.json:json:20230618"
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3"
+
+    // SharedPreferences sécurisées
+    implementation "androidx.security:security-crypto:1.1.0-alpha06"
+
+    // AppCompat for themes
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+
+    // Navigation - version stable
+    implementation 'androidx.navigation:navigation-compose:2.6.0'
+
+    // Hilt - versions compatibles
+    implementation 'com.google.dagger:hilt-android:2.48'
+    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
+    ksp 'com.google.dagger:hilt-compiler:2.48'
+
+    // Networking - versions stables
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // DataStore
+    implementation 'androidx.datastore:datastore-preferences:1.0.0'
+
+    // Serialization
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1'
+
+    // Permissions
+    implementation 'com.google.accompanist:accompanist-permissions:0.30.1'
+
+    // Room Database - versions stables
+    implementation 'androidx.room:room-runtime:2.5.2'
+    implementation 'androidx.room:room-ktx:2.5.2'
+    ksp 'androidx.room:room-compiler:2.5.2'
+
+    // WorkManager - version stable
+    implementation 'androidx.work:work-runtime-ktx:2.8.1'
+    implementation 'androidx.hilt:hilt-work:1.0.0'
+
+    // Testing
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation platform('androidx.compose:compose-bom:2023.08.00')
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
+    
+    // Debug
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+    debugImplementation 'androidx.compose.ui:ui-test-manifest'
+}

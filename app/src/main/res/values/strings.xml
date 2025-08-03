@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vizion Security</string>
+    <string name="app_description">Professional security monitoring for Android</string>
+    
+    <!-- Navigation -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_alerts">Alertes</string>
+    <string name="nav_privacy">Confidentialité</string>
+    <string name="nav_wazuh">Wazuh</string>
+    <string name="nav_settings">Paramètres</string>
+    
+    <!-- Dashboard -->
+    <string name="dashboard_title">Tableau de Bord</string>
+    <string name="security_score">Score de Sécurité</string>
+    <string name="active_threats">Menaces Actives</string>
+    <string name="protected_apps">Applications Protégées</string>
+    <string name="wazuh_status">Statut Wazuh</string>
+    
+    <!-- Alerts -->
+    <string name="alerts_title">Alertes de Sécurité</string>
+    <string name="no_alerts">Aucune alerte active</string>
+    <string name="alert_high">Critique</string>
+    <string name="alert_medium">Moyen</string>
+    <string name="alert_low">Faible</string>
+    
+    <!-- Privacy -->
+    <string name="privacy_title">Analyse de Confidentialité</string>
+    <string name="app_permissions">Permissions d\'Applications</string>
+    <string name="data_usage">Utilisation des Données</string>
+    
+    <!-- Wazuh -->
+    <string name="wazuh_title">Monitoring SIEM</string>
+    <string name="wazuh_connected">Connecté</string>
+    <string name="wazuh_disconnected">Déconnecté</string>
+    <string name="wazuh_connecting">Connexion…</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Paramètres</string>
+    <string name="settings_security">Sécurité</string>
+    <string name="settings_notifications">Notifications</string>
+    <string name="settings_about">À propos</string>
+    
+    <!-- Permissions -->
+    <string name="permission_usage_stats">Statistiques d\'utilisation</string>
+    <string name="permission_device_admin">Administration de l\'appareil</string>
+    <string name="permission_accessibility">Service d\'accessibilité</string>
+    <string name="permission_required">Permission requise</string>
+    <string name="permission_grant">Accorder</string>
+    
+    <!-- Services -->
+    <string name="service_monitoring">Surveillance de sécurité active</string>
+    <string name="service_wazuh">Agent Wazuh en cours d\'exécution</string>
+    <string name="service_banking">Protection bancaire activée</string>
+    
+    <!-- Common -->
+    <string name="ok">OK</string>
+    <string name="cancel">Annuler</string>
+    <string name="enable">Activer</string>
+    <string name="disable">Désactiver</string>
+    <string name="loading">Chargement…</string>
+    <string name="error">Erreur</string>
+    <string name="retry">Réessayer</string>
+</resources>

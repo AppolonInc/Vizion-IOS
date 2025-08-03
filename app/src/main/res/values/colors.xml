@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Vizion Security Colors -->
+    <color name="primary">#FF1976D2</color>
+    <color name="primary_variant">#FF0D47A1</color>
+    <color name="secondary">#FF03DAC6</color>
+    <color name="secondary_variant">#FF018786</color>
+    <color name="background">#FF121212</color>
+    <color name="surface">#FF1E1E1E</color>
+    <color name="error">#FFCF6679</color>
+    <color name="on_primary">#FFFFFFFF</color>
+    <color name="on_secondary">#FF000000</color>
+    <color name="on_background">#FFFFFFFF</color>
+    <color name="on_surface">#FFFFFFFF</color>
+    <color name="on_error">#FF000000</color>
+    
+    <!-- Security Status Colors -->
+    <color name="security_high">#FF4CAF50</color>
+    <color name="security_medium">#FFFF9800</color>
+    <color name="security_low">#FFF44336</color>
+    
+    <!-- Alert Colors -->
+    <color name="alert_critical">#FFFF1744</color>
+    <color name="alert_warning">#FFFF6F00</color>
+    <color name="alert_info">#FF2196F3</color>
+    <color name="alert_success">#FF00C853</color>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme using the most basic Android theme -->
+    <style name="Theme.VizionSecurity" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- Primary brand color -->
+        <item name="android:colorPrimary">@color/primary</item>
+        <!-- Status bar color -->
+        <item name="android:statusBarColor">@color/primary</item>
+    </style>
+</resources>
